@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { ApiError } from "../utils/ApiError.js";
-import { asyncHandler } from "../utils/asyncHandler.js";
+import { asyncHandler } from "../utils/AsyncHandler.js";
 import dotenv from 'dotenv'
 dotenv.config()
 

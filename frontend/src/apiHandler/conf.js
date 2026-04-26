@@ -1,6 +1,6 @@
 import { config } from "../config/config.js";
 const baseUrl = config.backendApiUrl || "http://localhost:3000"
-
+console.log(baseUrl)
 class ApiServices {
     async getAllDocuments(){
         try {

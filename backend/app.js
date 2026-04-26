@@ -12,7 +12,7 @@ const app = express()
 
 // cors configuration 
 app.use(cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    origin: "https://doc-manager-hazel.vercel.app" || "http://localhost:3000",
     credentials: true,
     methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
     allowedHeaders: ['Content-type', "Authorization"]

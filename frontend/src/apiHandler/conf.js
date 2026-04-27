@@ -56,9 +56,6 @@ class ApiServices {
             method: 'POST', 
             mode: 'cors',
             credentials: 'include',
-            headers: {
-                "Content-Type": "application/json",
-            },
             body: formData
         }
         try {
@@ -86,9 +83,6 @@ class ApiServices {
             method: 'POST', 
             mode: 'cors',
             credentials: 'include',
-            headers: {
-                "Content-Type": "application/json",
-            },
             body: formData
         }
         try {

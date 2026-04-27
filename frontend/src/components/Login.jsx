@@ -21,6 +21,7 @@ function Login() {
         if(session?.success){
           const userData = await authServices.getCurrentUser()
           if(userData){
+            console.log({userData})
             dispatch(storeLogin(userData.data));
             toast.success('user logged in')
             setTimeout(()=>{

@@ -34,6 +34,7 @@ class AuthServices{
                     const loggedInUser = await fetch(`${baseUrl}/api/v1/users`)
                     if(!loggedInUser) return null
                     const data = await loggedInUser.json()
+                    console.log({data})
                     return data
                 } catch (error) {
                     console.log("ApiServices :: getCurrentUser :: error", error)

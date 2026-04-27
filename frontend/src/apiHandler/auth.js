@@ -15,7 +15,6 @@ class AuthServices{
         }
 
         try {
-            console.log({baseUrl})
             const session = await fetch(`${baseUrl}/api/v1/users/login`, options);
             if(!session.ok){
                 const errorData = await session.json()
@@ -41,7 +40,7 @@ class AuthServices{
                     }
                 }
                 try {
-                    const loggedInUser = await fetch(`${baseUrl}/api/v1/users`)
+                    const loggedInUser = await fetch(`${baseUrl}/api/v1/users`, options)
                     if(!loggedInUser) return null
                     const data = await loggedInUser.json()
                     console.log({data})

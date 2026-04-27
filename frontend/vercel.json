@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://doc-manager-backend.onrender.com/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

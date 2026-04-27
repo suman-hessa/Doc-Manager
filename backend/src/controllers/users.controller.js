@@ -41,7 +41,8 @@ const login = asyncHandler(async(req, res)=>{
 
     const options = {
         httpOnly: true,
-        secure: true
+        secure: true, 
+        sameSite: 'None'
     }
     const loggedInUser = await User.findById(user._id).select("-password");
 

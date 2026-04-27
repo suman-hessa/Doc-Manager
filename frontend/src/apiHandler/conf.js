@@ -4,7 +4,7 @@ console.log(baseUrl)
 class ApiServices {
     async getAllDocuments(){
         try {
-           const documents = await fetch(`${baseUrl}/api/v1/documents`)
+           const documents = await fetch(`/api/v1/documents`)
            if(documents){
             const data = await documents.json()
             return data.data;
@@ -16,7 +16,7 @@ class ApiServices {
 
     async getDocumentById(documentId){
         try {
-            const document = await fetch(`${baseUrl}/api/v1/documents/read/${documentId}`)
+            const document = await fetch(`/api/v1/documents/read/${documentId}`)
             if(document){
                 const data = await document.json();
                 return data;
@@ -41,7 +41,7 @@ class ApiServices {
             body: formData
         }
         try {
-           const response = await fetch(`${baseUrl}/api/v1/documents/create`, options);
+           const response = await fetch(`/api/v1/documents/create`, options);
            if(response){
             const data = await response.json();
             return data;
@@ -66,7 +66,7 @@ class ApiServices {
             body: formData
         }
         try {
-           const response = await fetch(`${baseUrl}/api/v1/documents/update/${documentId}`, options);
+           const response = await fetch(`/api/v1/documents/update/${documentId}`, options);
            if(response){
             const data = await response.json();
             return data.data;
@@ -81,7 +81,7 @@ class ApiServices {
             method: 'POST', 
         }
         try {
-            const response = await fetch(`${baseUrl}/api/v1/documents/delete/${documentId}`, options)
+            const response = await fetch(`/api/v1/documents/delete/${documentId}`, options)
             if(response){
                 const data = await response.json()
                 return data;

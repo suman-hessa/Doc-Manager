@@ -19,8 +19,8 @@ class AuthServices{
                 const errorData = await session.json()
                 throw new Error(errorData.message)
             }else{
-                console.log({activeSession})
                 const activeSession = await session.json()
+                console.log({activeSession})
                 return activeSession;
             }  
         } catch (error) {

@@ -3,8 +3,16 @@ const baseUrl = config.backendApiUrl || "http://localhost:3000"
 console.log(baseUrl)
 class ApiServices {
     async getAllDocuments(){
+        const options = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }
         try {
-           const documents = await fetch(`${baseUrl}/api/v1/documents`)
+           const documents = await fetch(`${baseUrl}/api/v1/documents`, options)
            if(documents){
             const data = await documents.json()
             return data.data;
@@ -15,8 +23,16 @@ class ApiServices {
     }
 
     async getDocumentById(documentId){
+        const options = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }
         try {
-            const document = await fetch(`${baseUrl}/api/v1/documents/read/${documentId}`)
+            const document = await fetch(`${baseUrl}/api/v1/documents/read/${documentId}`, options)
             if(document){
                 const data = await document.json();
                 return data;
@@ -38,6 +54,11 @@ class ApiServices {
         })
         const options ={
             method: 'POST', 
+            mode: 'cors',
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json",
+            },
             body: formData
         }
         try {
@@ -63,6 +84,11 @@ class ApiServices {
         })
         const options ={
             method: 'POST', 
+            mode: 'cors',
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json",
+            },
             body: formData
         }
         try {
@@ -78,7 +104,12 @@ class ApiServices {
 
     async deleteDocumentById(documentId){
         const options = {
-            method: 'POST', 
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json",
+            }, 
         }
         try {
             const response = await fetch(`${baseUrl}/api/v1/documents/delete/${documentId}`, options)

@@ -13,6 +13,7 @@ class AuthServices{
         }
 
         try {
+            console.log({baseUrl})
             const session = await fetch(`${baseUrl}/api/v1/users/login`, options);
             if(!session.ok){
                 const errorData = await session.json()
